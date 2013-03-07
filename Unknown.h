@@ -4,11 +4,11 @@ class Unknown {
 public:
     Unknown();
 
-    virtual void                AddRef();
-    virtual void                Release();
-    int                         GetRefCount() const;
+    virtual void                addRef();
+    virtual void                release();
+    int                         getRefCount() const;
 
-    virtual const char          *GetClassName() const   = 0;
+    virtual const char          *getClassName() const   = 0;
 
 protected:
     virtual ~Unknown();
@@ -16,5 +16,5 @@ protected:
     int                         m_RefCount;
 
 private:
-    void                        Init();
+
 };

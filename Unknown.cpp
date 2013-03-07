@@ -4,27 +4,23 @@
 using namespace std;
 
 Unknown::Unknown() {
-	Init();
+	m_RefCount = 1;
 }
 
 Unknown::~Unknown() {
 
 }
 
-void Unknown::AddRef() {
+void Unknown::addRef() {
 	assert(m_RefCount > 0);
 	m_RefCount++;
 }
 
-int Unknown::GetRefCount() const {
+int Unknown::getRefCount() const {
     return m_RefCount;
 }
 
-void Unknown::Init() {
-	m_RefCount = 1;
-}
-
-void Unknown::Release() {
+void Unknown::release() {
 	assert(m_RefCount > 0);
 
 	m_RefCount--;
